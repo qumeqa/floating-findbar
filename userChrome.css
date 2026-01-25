@@ -13,11 +13,22 @@ findbar {
     border: 1px solid var(--panel-separator-color) !important;
     background: var(--arrowpanel-background) !important;
     padding: 6px !important;
-    transition:
-        transform 0.3s ease,
-        opacity 0.3s ease !important;
-    opacity: 1 !important;
     box-shadow: var(--box-shadow-level-3) !important;
+    opacity: 1 !important;
+    transition: transform 0.3s ease, opacity 0.3s ease !important;
+    
+    @starting-style {
+        transform: translateX(-50%) translateY(-10px) !important;
+        opacity: 0 !important;
+    }
+    
+    &[hidden] {
+        transform: translateX(-50%) translateY(-10px) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s !important;
+        pointer-events: none !important;
+    }
 }
 
 .findbar-container {
@@ -40,7 +51,6 @@ findbar {
     height: 38px !important;
     border-radius: 10px !important;
     margin: 0 !important;
-
     .toolbarbutton-icon {
         position: absolute !important;
         top: 50% !important;
@@ -63,24 +73,4 @@ findbar {
 .findbar-entire-word,
 .findbar-find-status {
     display: none !important;
-}
-
-findbar {
-    transition:
-        transform 0.3s ease,
-        opacity 0.3s ease,
-        visibility 0s 0s !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-
-    &:where([hidden]) {
-        transform: translateX(-50%) translateY(-10px) !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        transition:
-            transform 0.3s ease,
-            opacity 0.3s ease,
-            visibility 0s 0.3s !important;
-        pointer-events: none !important;
-    }
 }
