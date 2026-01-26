@@ -8,8 +8,8 @@ findbar {
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: max-content !important;
-    min-width: 540px !important;
-    border-radius: 16px !important;
+    min-width: 520px !important;
+    border-radius: 12px !important;
     border: 1px solid var(--panel-separator-color) !important;
     background: var(--arrowpanel-background) !important;
     padding: 6px !important;
@@ -18,12 +18,12 @@ findbar {
     transition: transform 0.3s ease, opacity 0.3s ease !important;
     
     @starting-style {
-        transform: translateX(-50%) translateY(-10px) !important;
+        transform: translateX(-50%) translateY(-6px) !important;
         opacity: 0 !important;
     }
     
     &[hidden] {
-        transform: translateX(-50%) translateY(-10px) !important;
+        transform: translateX(-50%) translateY(-6px) !important;
         opacity: 0 !important;
         visibility: hidden !important;
         transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s !important;
@@ -38,8 +38,15 @@ findbar {
 }
 
 .findbar-textbox {
-    border-radius: 10px !important;
-    padding: 10px 12px !important;
+    border-radius: 6px !important;
+    padding: 8px 12px !important;
+    box-shadow: none !important;
+    
+    &:focus {
+        background-color: var(--toolbar-field-focus-background-color);
+        border: 1px solid var(--toolbar-field-focus-border-color) !important;
+        outline: none !important;
+    }
 }
 
 .findbar-find-previous,
@@ -49,7 +56,7 @@ findbar {
     padding: 0 !important;
     width: 38px !important;
     height: 38px !important;
-    border-radius: 10px !important;
+    border-radius: 6px !important;
     margin: 0 !important;
     .toolbarbutton-icon {
         position: absolute !important;
@@ -64,7 +71,7 @@ findbar {
 }
 
 .found-matches {
-    margin: 0 10px !important;
+    margin: 0 6px !important;
 }
 
 .findbar-highlight,
