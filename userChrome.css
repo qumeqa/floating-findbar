@@ -11,7 +11,7 @@ findbar {
     min-width: 520px !important;
     contain: initial !important;
     border-radius: 12px !important;
-    border: 1px solid var(--panel-separator-color) !important;
+    border: none !important;
     background: var(--arrowpanel-background) !important;
     padding: 6px !important;
     box-shadow: var(--box-shadow-level-3) !important;
